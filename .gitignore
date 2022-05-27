@@ -1,0 +1,4 @@
+/mongo/configdb
+/mongo/db
+/node_modules
+.env
