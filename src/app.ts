@@ -87,6 +87,14 @@ const main = async () => {
       await postMongo(col, postData)
     })
   }
+
+  process.on('SIGINT', async () => {
+    await client.close()
+    console.log('Mongo Client Close')
+    device.disconnect()
+    console.log('BLE Device Disconnected')
+    process.exit(0)
+  })
 }
 
 main()
